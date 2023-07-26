@@ -1,3 +1,3 @@
 export default function Loading() {
-  return "Loading...."
+  return "로딩중입니다~~~~"
 }
