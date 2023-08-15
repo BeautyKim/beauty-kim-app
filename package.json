@@ -8,6 +8,8 @@
   "engineStrict": true,
   "scripts": {
     "dev": "next dev",
+    "dev:development": "env-cmd -f ./src/environments/.env.development next dev",
+    "dev:notion": "env-cmd -f ./src/environments/.env.notion next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,11 +18,14 @@
     "@types/node": "20.4.4",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
+    "env-cmd": "^10.1.0",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "next": "13.4.12",
+    "notion-client": "^6.16.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-notion-x": "^6.16.0",
     "typescript": "5.1.6"
   }
 }
