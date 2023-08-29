@@ -22,10 +22,8 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "next": "13.4.12",
-    "notion-client": "^6.16.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-notion-x": "^6.16.0",
     "typescript": "5.1.6"
   }
 }
