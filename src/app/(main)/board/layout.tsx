@@ -4,8 +4,9 @@ export default function BoardLayout({
     children: React.ReactNode
   }) {
     return (
-      <html lang="ko">
-        <body>{children}</body>
-      </html>
+      <main>
+        <h1>상세페이지 레이아웃</h1>
+        {children}
+      </main>
     )
   }

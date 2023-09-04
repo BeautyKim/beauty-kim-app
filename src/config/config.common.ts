@@ -4,15 +4,19 @@ export declare namespace CommonConfig {
     baseUrl: string;
     mode: string | undefined;
     port: number;
+    token: string | undefined;
+    databaseId: string | undefined;
   }
 }
 
 export default function getConfigs(params: CommonConfig.Params) {
-  const { baseUrl, mode, port } = params;
+  const { baseUrl, mode, port, token, databaseId } = params;
 
   return {
     baseUrl,
     mode,
-    port
+    port,
+    token,
+    databaseId
   }
 }

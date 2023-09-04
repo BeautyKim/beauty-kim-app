@@ -1,7 +1,12 @@
-export default function Home() {
+
+export default function Home({}) {
+
   return (
-      <div>
+      <main>
         <h1>일단 만들어보자구~~</h1>
-      </div>
+        <div>
+
+        </div>
+      </main>
   )
 }

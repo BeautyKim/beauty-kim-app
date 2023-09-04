@@ -1,6 +1,7 @@
 export default function GalleryBoard() {
-    return(
-        <>
-        </>
-    )
+  return(
+    <section>
+      
+    </section>
+  )
 }
