@@ -16,6 +16,7 @@ export default async function Board() {
         <li key={res.id}>
           <Link href={`/board/${res.id}`}>
             <Card data={res}/>
+            <span>{res.id}</span>
           </Link>
         </li>
       ))}
