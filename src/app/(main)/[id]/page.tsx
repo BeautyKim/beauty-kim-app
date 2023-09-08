@@ -7,7 +7,7 @@ export default async function DetailBoardPage({ params }: { params: { id: string
   const page = await getPage(id);
   const blocks = await getBlocks(id);
   
-  console.log(page);
+  console.log(blocks);
 
   return (
       <div>

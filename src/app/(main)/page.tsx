@@ -9,7 +9,6 @@ export default async function Home(){
   const data = await getDatabase(databaseId);
   const modiArray = data.slice(1);
   const newData = modiArray.map((res: any) => res)
-  console.log(newData);
 
   return (
     <>

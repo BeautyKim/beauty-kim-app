@@ -20,7 +20,6 @@ const Text = ({ text }: any) => {
             strikethrough ? styles.strikethrough : "",
             underline ? styles.underline : "",
           ].join(" ")}
-          style={color !== "default" ? { color } : {}}
           key={text.content}
         >
           {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
@@ -49,26 +48,26 @@ const renderBlock = (block: any) => {
   switch (type) {
     case "paragraph":
       return (
-        <p>
-          <Text text={value.rich_text} />
+        <p style={{color: value.color}}>
+          <Text text={value.rich_text}/>
         </p>
       );
     case "heading_1":
       return (
-        <h1>
-          <Text text={value.rich_text} />
+        <h1 style={{color: value.color}}>
+          <Text text={value.rich_text} style={{color: value.color}}/>
         </h1>
       );
     case "heading_2":
       return (
-        <h2>
-          <Text text={value.rich_text} />
+        <h2 style={{color: value.color}}>
+          <Text text={value.rich_text} style={{color: value.color}}/>
         </h2>
       );
     case "heading_3":
       return (
-        <h3>
-          <Text text={value.rich_text} />
+        <h3 style={{color: value.color}}>
+          <Text text={value.rich_text} style={{color: value.color}}/>
         </h3>
       );
     case "bulleted_list": {
@@ -80,8 +79,10 @@ const renderBlock = (block: any) => {
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
-        <li key={block.id}>
-          <Text text={value.rich_text} />
+        <li key={block.id} style={{color: value.color}}>
+          <p style={{color: value.color}}>
+            <Text text={value.rich_text} />
+          </p>
           {!!value.children && renderNestedList(block)}
         </li>
       );
@@ -90,14 +91,16 @@ const renderBlock = (block: any) => {
         <div>
           <label htmlFor={id}>
             <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
-            <Text text={value.rich_text} />
+            <p style={{color: value.color}}>
+              <Text text={value.rich_text} />
+            </p>
           </label>
         </div>
       );
     case "toggle":
       return (
         <details>
-          <summary>
+          <summary style={{color: value.color}}>
             <Text text={value.rich_text} />
           </summary>
           {block.children?.map((child: any) => (
@@ -109,7 +112,7 @@ const renderBlock = (block: any) => {
       return (
         <div className={styles.childPage}>
           <strong>{value.title}</strong>
-          {block.children.map((child: any) => renderBlock(child))}
+          {block.children?.map((child: any) => renderBlock(child))}
         </div>
       );
     case "image":
@@ -153,10 +156,14 @@ const renderBlock = (block: any) => {
       );
     case "bookmark":
       const href = value.url;
+      const bookmarkCaption = value.caption;
+      console.log(bookmarkCaption)
       return (
-        <a href={href} target="_brank" className={styles.bookmark}>
-          {href}
-        </a>
+        <div>
+          <Link href={href} target="_brank" className={styles.bookmark}>
+            {href}
+          </Link>
+        </div>
       );
     case "table": {
       return (
@@ -170,7 +177,9 @@ const renderBlock = (block: any) => {
                   {child.table_row?.cells?.map((cell: any, i: any) => {
                     return (
                       <RowElement key={`${cell.plain_text}-${i}`}>
-                        <Text text={cell} />
+                        <p style={{color: value.color}}>
+                          <Text text={cell} />
+                        </p>
                       </RowElement>
                     );
                   })}
@@ -184,12 +193,23 @@ const renderBlock = (block: any) => {
     case "column_list": {
       return (
         <div className={styles.row}>
-          {block.children.map((block: any) => renderBlock(block))}
+          {block.children?.map((block: any) => renderBlock(block))}
         </div>
       );
     }
     case "column": {
-      return <div>{block.children.map((child: any) => renderBlock(child))}</div>;
+      return <div>{block.children?.map((child: any) => renderBlock(child))}</div>;
+    }
+    case "callout": {
+      const calloutText = value.rich_text;
+      return (
+      <div className={styles.calloutBox}>
+        <div className={styles.calloutText}>
+          <p>{value.icon.emoji}</p>
+          <p>{calloutText.map((res: any) => res.text.content)}</p>
+        </div>
+      </div>
+      );
     }
     default:
       return `❌ Unsupported block (${

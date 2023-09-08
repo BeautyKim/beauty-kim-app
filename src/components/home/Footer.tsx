@@ -4,11 +4,11 @@ export default function Footer() {
             <div className="footer">
                 <h1>Footer</h1>
             </div>
-            <p>
+            <div>
                 <span></span>
                 <address></address>
                 <span></span>
-            </p>
+            </div>
         </footer>
     )
 }

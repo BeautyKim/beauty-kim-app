@@ -30,16 +30,13 @@ export default function DetailBoard({ page, blocks }: any) {
                     />
                 </div>
                 <h1 className={styles.name}>
-                <Text text={page.properties.Name.title} />
-                <p>{formattedDate(page)}</p>
+                    <Text text={page.properties.Name.title} />
                 </h1>
+                <p>{formattedDate(page)}</p>
                 <article>
                 {blocks.map((block: any) => (
                     <Fragment key={block.id}>{renderBlock(block)}</Fragment>
                 ))}
-                <Link href="/" className={styles.back}>
-                    ← Go home
-                </Link>
                 </article>
             </section>
         </div>
