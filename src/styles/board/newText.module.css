@@ -1,0 +1,15 @@
+.newTextBox {
+    border: 1px solid;
+    display: flex;
+}
+.newText {
+    
+}
+.tags {
+    display: flex;
+}
+.tag {
+    margin: 0 5px;
+    border: 1px solid;
+    border-radius: 10%;
+}

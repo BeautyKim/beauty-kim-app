@@ -1,0 +1,14 @@
+.content{
+    max-width: 800px;
+    margin: 0 auto;
+}
+.flexbox{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.item{
+    min-height: 200px;
+    flex-basis: 150px;
+    flex-grow: 1;
+}

@@ -4,6 +4,11 @@ export default function Footer() {
             <div className="footer">
                 <h1>Footer</h1>
             </div>
+            <p>
+                <span></span>
+                <address></address>
+                <span></span>
+            </p>
         </footer>
     )
 }

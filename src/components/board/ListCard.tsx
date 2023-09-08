@@ -1,4 +1,6 @@
-function Card({ data }: any) {
+import styles from '@/styles/board/listCard.module.css';
+
+function ListCard({ data }: any) {
     if (data.properties) {
       const title = data.properties.Name.title;
       const date = data.created_time;
@@ -20,4 +22,4 @@ function Card({ data }: any) {
     }
   }
   
-  export default Card;
+  export default ListCard;

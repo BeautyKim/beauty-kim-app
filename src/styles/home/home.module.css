@@ -1,0 +1,12 @@
+.galleryCardContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 10px;
+}
+.galleryCardContainer div:first-child {
+    grid-column: 1 / 4;
+}
+.homeSection {
+    max-width: 1200px;
+    margin: 0 auto;
+}

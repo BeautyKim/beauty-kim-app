@@ -1,0 +1,15 @@
+.section {
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 5px;
+  border: 1px solid;
+}
+
+.container {
+  width: 15rem;
+  text-align: center;
+  margin: 3rem;
+}
+

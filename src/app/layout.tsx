@@ -3,12 +3,13 @@ import Header from '@/components/home/Header';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'test',
-  description: 'next.js 13 연습중~~',
+  title: 'Beauty Kim Blog',
+  description: '한 번에 하나씩 기록합니다',
 }
 
 export default function RootLayout({
@@ -18,9 +19,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
+      <Head>
+        <meta property='og:type' content='website'/>
+        <meta property='og:site_name' content='Beauty Kim Blog'/>
+        <meta property='og:title' content='Beauty Kim Blog'/>
+        <meta property='og:description' content='한 번에 하나씩 기록합니다'/>
+        <meta property='og:image' content='./darong.jpg'/>
+        <meta property='og:url' content='https://beautykim.site'/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+      </Head>
       <body className={inter.className}>
         <Header/>
-        {children}
+          <main>
+            {children}
+          </main>
         <Footer/>
       </body>
     </html>
