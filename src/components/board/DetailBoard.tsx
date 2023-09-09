@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import styles from "@/styles/board/DetailBoard.module.css";
+import styles from "@/styles/board/detailBoard.module.css";
 import formattedDate from "@/app/lib/notion/formatteddate";
 import { Text, renderBlock } from "@/components/board/NotionBlock"
 
