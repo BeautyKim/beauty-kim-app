@@ -1,5 +1,5 @@
-import styles from '@/styles/Home/header.module.css'
-import Link from "next/link"
+import Link from "next/link";
+import styles from "@/styles/home/header.module.css";
 import SearchBar from './SearchBar';
 
 export default function Header() {
