@@ -1,7 +1,12 @@
 .header {
     height: 80px;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    right: 0px;
     display: flex;
     justify-content: center;
+    backdrop-filter: blur(15px);
     
 }
 .nav {

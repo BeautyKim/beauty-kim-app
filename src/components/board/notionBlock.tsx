@@ -1,3 +1,5 @@
+import { textColors } from "@/app/lib/notion/colorPalette";
+import highlightCode from "@/app/lib/notion/highlightCode";
 import styles from "@/styles/board/DetailBoard.module.css";
 import Link from "next/link";
 import { Fragment } from "react";
@@ -48,26 +50,26 @@ const renderBlock = (block: any) => {
   switch (type) {
     case "paragraph":
       return (
-        <p style={{color: value.color}}>
+        <p style={textColors(value.color)}>
           <Text text={value.rich_text}/>
         </p>
       );
     case "heading_1":
       return (
-        <h1 style={{color: value.color}}>
-          <Text text={value.rich_text} style={{color: value.color}}/>
+        <h1 style={textColors(value.color)}>
+          <Text text={value.rich_text}/>
         </h1>
       );
     case "heading_2":
       return (
-        <h2 style={{color: value.color}}>
-          <Text text={value.rich_text} style={{color: value.color}}/>
+        <h2 style={textColors(value.color)}>
+          <Text text={value.rich_text}/>
         </h2>
       );
     case "heading_3":
       return (
-        <h3 style={{color: value.color}}>
-          <Text text={value.rich_text} style={{color: value.color}}/>
+        <h3 style={textColors(value.color)}>
+          <Text text={value.rich_text}/>
         </h3>
       );
     case "bulleted_list": {
@@ -79,8 +81,8 @@ const renderBlock = (block: any) => {
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
-        <li key={block.id} style={{color: value.color}}>
-          <p style={{color: value.color}}>
+        <li key={block.id} style={textColors(value.color)}>
+          <p style={textColors(value.color)}>
             <Text text={value.rich_text} />
           </p>
           {!!value.children && renderNestedList(block)}
@@ -91,7 +93,7 @@ const renderBlock = (block: any) => {
         <div>
           <label htmlFor={id}>
             <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
-            <p style={{color: value.color}}>
+            <p style={textColors(value.color)}>
               <Text text={value.rich_text} />
             </p>
           </label>
@@ -100,7 +102,7 @@ const renderBlock = (block: any) => {
     case "toggle":
       return (
         <details>
-          <summary style={{color: value.color}}>
+          <summary style={textColors(value.color)}>
             <Text text={value.rich_text} />
           </summary>
           {block.children?.map((child: any) => (
@@ -130,7 +132,15 @@ const renderBlock = (block: any) => {
     case "quote":
       return <blockquote key={id}>{value.rich_text[0].plain_text}</blockquote>;
     case "code":
+      const highlightCodeAsync = async () => {
+        const highlightedCode = await highlightCode(value.rich_text[0].plain_text);
+        return highlightedCode;
+      };
       return (
+        // <div>
+        //   <h1>Code Highlight Page</h1>
+        //   <pre dangerouslySetInnerHTML={{__html: highlightCodeAsync()}} />
+        // </div>
         <pre className={styles.pre}>
           <code className={styles.code_block} key={id}>
             {value.rich_text[0].plain_text}
@@ -156,8 +166,6 @@ const renderBlock = (block: any) => {
       );
     case "bookmark":
       const href = value.url;
-      const bookmarkCaption = value.caption;
-      console.log(bookmarkCaption)
       return (
         <div>
           <Link href={href} target="_brank" className={styles.bookmark}>
@@ -177,7 +185,7 @@ const renderBlock = (block: any) => {
                   {child.table_row?.cells?.map((cell: any, i: any) => {
                     return (
                       <RowElement key={`${cell.plain_text}-${i}`}>
-                        <p style={{color: value.color}}>
+                        <p style={textColors(value.color)}>
                           <Text text={cell} />
                         </p>
                       </RowElement>
@@ -209,6 +217,14 @@ const renderBlock = (block: any) => {
           <p>{calloutText.map((res: any) => res.text.content)}</p>
         </div>
       </div>
+      );
+    }
+    case "video": {
+      const originalText = value.external.url;
+      const youtubeLink = originalText.split("https://youtu.be/");
+      console.log(youtubeLink[1])
+      return (
+      <iframe src={`https://www.youtube.com/embed/${youtubeLink[1]}`} width="708" height="398"/>
       );
     }
     default:

@@ -40,31 +40,31 @@ const textColors = (color: string) => {
     let textColor = "";
     switch(color) {
     case "blue":
-        textColor = "#D3E5EF";
+        textColor = "blue";
         break;
     case "brown":
-        textColor = "#EEE0DA";
+        textColor = "brown";
         break;
     case "gray":
-        textColor = "#E3E2E0";
+        textColor = "gray";
         break;
     case "green":
-        textColor = "#DBEDDB";
+        textColor = "green";
         break;
     case "orange":
-        textColor = "#FADEC9";
+        textColor = "orange";
         break;
     case "pink":
-        textColor = "#F5E0E9";
+        textColor = "pink";
         break;
     case "purple":
-        textColor = "#E8DEEE";
+        textColor = "purple";
         break;
     case "red":
-        textColor = "#FFE2DD";
+        textColor = "red";
         break;
     case "yellow":
-        textColor = "#FDECC8";
+        textColor = "yellow";
         break;
     case "blue_background":
         textColor = "#D3E5EF";

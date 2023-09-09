@@ -1,0 +1,39 @@
+.hljs .codeHeader {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    background-color: #434041;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .hljs .codeHeader .btn {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+  }
+  
+  .hljs .codeHeader .btn #red {
+    background-color: #F5655B;
+  }
+  
+  .hljs .codeHeader .btn #yellow {
+    background-color: #F6BD3B;
+  }
+  
+  .hljs .codeHeader .btn #green {
+    background-color: #43C645;
+  }
+
+  pre {
+    position: relative;
+  }
+
+  pre::after {
+    content: attr(data-ke-language);
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    color: #cfd2d1;
+    font-size: 12px;
+  }

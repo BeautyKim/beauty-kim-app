@@ -1,8 +1,7 @@
 import Head from "next/head";
-import { Text, renderBlock } from "@/components/board/notionBlock"
+import { Text, renderBlock } from "@/components/board/NotionBlock"
 import styles from "@/styles/board/DetailBoard.module.css";
 import { Fragment } from "react";
-import Link from "next/link";
 import formattedDate from "@/app/lib/notion/formatteddate";
 
 
