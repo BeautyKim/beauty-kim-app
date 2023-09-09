@@ -14,14 +14,16 @@ export default async function Home(){
     <>
       <Title/>
       <section className={styles.homeSection}>
-        <article>
-          <h1>최신글</h1>
-        </article>
+        <h1 className={styles.newText}>New</h1>
+        <NewText className={styles.galleryCardItem} data={data[0]}/>
         <article className={styles.galleryCardContainer}>
-          <NewText className={styles.galleryCardItem} data={data[0]}/>
+          <div className={styles.galleryCards}>
             {newData.map((aProject) => (
-              <GalleryCard className={styles.galleryCardItem} key={aProject.id} data={aProject}/>
+              <GalleryCard key={aProject.id} data={aProject}/>
             ))}
+          </div>
+        </article>
+        <article>
         </article>
       </section>
     </>

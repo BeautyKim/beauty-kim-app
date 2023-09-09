@@ -20,27 +20,30 @@ export default function GalleryCard({data}: any) {
                         className="rounded-t-xl"
                         src={imgSrc}
                         alt="cover image"
-                        width={200}
-                        height={200}
+                        width={350}
+                        height={250}
                     />
                 </div>
-                <div>
-                <h1 className={styles.title}>{title}</h1>
                 <div className={styles.newText}>
-                    <h1>
+                    <h1 className={styles.category}>
                         {category.name}
                     </h1>
-                    <div className="tags">
+                    <h1 className={styles.title}>
+                        {title}
+                    </h1>
+                    <div className={styles.tags}>
                             {tags.map((aTag: any) => {
                                 return (
                                     <p className="tag" key={aTag.id} style={tagColors(aTag.color)}>{aTag.name}</p>
                                 )
                             })}
                     </div>
-                </div>
-                
-                <p className={styles.text}>{description}</p>
-                <p>{formattedDate(data)}</p>
+                    <p className={styles.description}>
+                        {description}
+                    </p>
+                    <p className={styles.date}>
+                        {formattedDate(data)}
+                    </p>
                 </div>
             </div>
         </Link>

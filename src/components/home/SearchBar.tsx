@@ -1,13 +1,15 @@
-import "@/styles/home/searchBar.module.css"
+"use client"
+import styles from "@/styles/home/searchBar.module.css"
+
 export default function SearchBar() {
+    const handleClick = () => {
+        alert("기능 준비중입니다.")
+    }
     return(
         <>
-        <button>검색</button>
-            {/* <form className="search-container" action="//llamaswill.tumblr.com/search">
-                <input id="search-box" type="text" className="search-box" name="q" />
-                <label form="search-box"><span className="glyphicon glyphicon-search search-icon"></span></label>
-                <input type="submit" id="search-submit" />
-            </form> */}
+        <button className={styles.button} onClick={handleClick}>
+            <img src={"./search_ui.svg"} width={30}/>
+        </button>
         </>
     )
 }

@@ -222,7 +222,6 @@ const renderBlock = (block: any) => {
     case "video": {
       const originalText = value.external.url;
       const youtubeLink = originalText.split("https://youtu.be/");
-      console.log(youtubeLink[1])
       return (
       <iframe src={`https://www.youtube.com/embed/${youtubeLink[1]}`} width="708" height="398"/>
       );

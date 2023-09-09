@@ -17,11 +17,11 @@ export default function Header() {
             <img className={styles.logo} src="/darong.jpg" />
           </Link>
         </div>
-        <div>
+        <div >
           <ul className={styles.menuBox}>
             {menuItems.map((menuItem, index) => (
               <li key={index} className={styles.menu}>
-                <Link className={styles.link} href={menuItem.href}>{menuItem.text}</Link>
+                {/* <Link className={styles.link} href={menuItem.href}>{menuItem.text}</Link> */}
               </li>
             ))}
           </ul>

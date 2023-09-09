@@ -1,12 +1,19 @@
-.galleryCardContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 10px;
-}
-.galleryCardContainer div:first-child {
-    grid-column: 1 / 4;
-}
 .homeSection {
     max-width: 1200px;
     margin: 0 auto;
+}
+.newText {
+    margin: 0.5rem 2rem;
+    font-size: 30px;
+}
+.galleryCardContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+.galleryCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

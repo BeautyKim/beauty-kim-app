@@ -13,31 +13,35 @@ export default function NewText({data}: any) {
     const description = data.properties.Description.rich_text[0].plain_text;
 
     return (
-        <div className={styles.newTextBox}>
-              <Link href={link}>
-            <img
-                className="rounded-t-xl"
-                src={imgSrc}
-                alt="cover image"
-                width={200}
-                height={200}
-            />
-            <div className={styles.newText}>
-                <h1>
-                    {category.name}
-                </h1>
-                <div className="tags">
-                        {tags.map((aTag: any) => {
-                            return (
-                                <p className="tag" key={aTag.id} style={tagColors(aTag.color)}>{aTag.name}</p>
-                            )
-                        })}
+        <div className={styles.container}>
+                <div className={styles.imageBox}>
+                    <Link href={link}>
+                        <img
+                            className={styles.coverImage}
+                            src={imgSrc}
+                            alt="cover image"
+                    />
+                    </Link>
                 </div>
-                <h1>{title}</h1>
-                <p>{description}</p>
-                <p>{formattedDate(data)}</p>
+                <div className={styles.textContainer}>
+                    <p className={styles.category}>
+                        {category.name}
+                    </p>
+                    <Link href={link}>
+                        <h1 className={styles.title}>
+                            {title}
+                        </h1>
+                    </Link>
+                    <div className={styles.tags}>
+                            {tags.map((aTag: any) => {
+                                return (
+                                    <p className={styles.tag} key={aTag.id} style={tagColors(aTag.color)}>{aTag.name}</p>
+                                )
+                            })}
+                    </div>
+                    <p className={styles.text}>{description}</p>
+                    <p className={styles.date}>{formattedDate(data)}</p>
+                </div>
             </div>
-          </Link>
-          </div>
     )
 }
