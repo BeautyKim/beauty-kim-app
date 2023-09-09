@@ -1,4 +1,4 @@
-export default function formattedDate(data: any) {
+const formattedDate = (data: any) => {
     const createdTime = new Date(data.created_time);
     const year = createdTime.getFullYear();
     const month = createdTime.getMonth() + 1;
@@ -7,3 +7,4 @@ export default function formattedDate(data: any) {
 
     return formattedDate;
 }
+export default formattedDate;
