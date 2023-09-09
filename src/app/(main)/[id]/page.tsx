@@ -2,10 +2,10 @@ import { getBlocks, getPage } from "@/app/lib/notion/getNotionData";
 import DetailBoard from "@/components/board/DetailBoard";
 import styles from "@/styles/board/boardPage.module.css"
 
-export default async function DetailBoardPage(props: any) {
+export default async function DetailBoardPage({page, blocks}: any) {
   return (
       <div className={styles.container}>
-        <DetailBoard page={props.page} blocks={props.blocks}/>  
+        <DetailBoard page={page} blocks={blocks}/>  
       </div>
   )
 }
