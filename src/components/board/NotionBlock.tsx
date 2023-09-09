@@ -1,6 +1,6 @@
 import { textColors } from "@/app/lib/notion/colorPalette";
 import highlightCode from "@/app/lib/notion/highlightCode";
-import styles from "@/styles/board/DetailBoard.module.css";
+import styles from "@/styles/board//detailBoard.module.css";
 import Link from "next/link";
 import { Fragment } from "react";
 
