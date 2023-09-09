@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { Fragment } from "react";
 import styles from "@/styles/board/DetailBoard.module.css";
 import formattedDate from "@/app/lib/notion/formatteddate";
