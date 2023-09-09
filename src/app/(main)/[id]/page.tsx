@@ -2,18 +2,23 @@ import { getBlocks, getPage } from "@/app/lib/notion/getNotionData";
 import DetailBoard from "@/components/board/DetailBoard";
 import styles from "@/styles/board/boardPage.module.css"
 
-export default async function DetailBoardPage({ params }: { params: { id: string } }) {
-  const { id } = params
-  const page = await getPage(id);
-  const blocks = await getBlocks(id);
-
+export default async function DetailBoardPage(props: any) {
   return (
       <div className={styles.container}>
-        <DetailBoard page={page} blocks={blocks}/>  
+        <DetailBoard page={props.page} blocks={props.blocks}/>  
       </div>
   )
 }
 
-export function generateStaticParams() {
-  return [{ id: '1' }]
+export async function generateStaticParams(context: any) {
+  const { id } = context.params;
+  const page = await getPage(id);
+  const blocks = await getBlocks(id);
+
+  return {
+    props: {
+      page,
+      blocks,
+    },
+  };
 };
