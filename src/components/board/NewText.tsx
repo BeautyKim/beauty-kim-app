@@ -1,6 +1,7 @@
 import { tagColors } from "@/app/lib/notion/colorPalette";
 import formattedDate from "@/app/lib/notion/formatteddate";
 import styles from "@/styles/board/newText.module.css";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function NewText({data}: any) {
@@ -16,9 +17,11 @@ export default function NewText({data}: any) {
         <div className={styles.container}>
                 <div className={styles.imageBox}>
                     <Link href={link}>
-                        <img
+                        <Image
                             className={styles.coverImage}
                             src={imgSrc}
+                            width={400}
+                            height={300}
                             alt="cover image"
                     />
                     </Link>

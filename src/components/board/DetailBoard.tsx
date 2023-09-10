@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import styles from "@/styles/board/detailBoard.module.css";
 import formattedDate from "@/app/lib/notion/formatteddate";
 import { Text, renderBlock } from "@/components/board/NotionBlock"
+import Image from "next/image";
 
 
 export default function DetailBoard({ page, blocks }: any) {
@@ -13,10 +14,12 @@ export default function DetailBoard({ page, blocks }: any) {
     return (
         <section className={styles.container}>
             <div>
-                <img
+                <Image
                     className={styles.coverImage}
                     src={imgSrc}
                     alt="cover image"
+                    width={400}
+                    height={300}
                 />
             </div>
             <h1 className={styles.name}>

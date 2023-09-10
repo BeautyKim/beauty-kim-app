@@ -2,6 +2,7 @@ import styles from '@/styles/board/galleryCard.module.css';
 import formattedDate from "@/app/lib/notion/formatteddate";
 import Link from 'next/link';
 import { tagColors } from '@/app/lib/notion/colorPalette';
+import Image from 'next/image';
 
 export default function GalleryCard({data}: any) {
     
@@ -16,12 +17,12 @@ export default function GalleryCard({data}: any) {
         <Link href={link}>
             <div className={styles.container}>
                 <div>
-                    <img
+                    <Image
                         className="rounded-t-xl"
                         src={imgSrc}
                         alt="cover image"
                         width={350}
-                        height={250}
+                        height={260}
                     />
                 </div>
                 <div className={styles.newText}>

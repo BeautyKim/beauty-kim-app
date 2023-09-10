@@ -1,6 +1,6 @@
 import { textColors } from "@/app/lib/notion/colorPalette";
-import highlightCode from "@/app/lib/notion/highlightCode";
 import styles from "@/styles/board//detailBoard.module.css";
+import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 
@@ -123,7 +123,7 @@ const renderBlock = (block: any) => {
       const caption = value.caption ? value.caption[0]?.plain_text : "";
       return (
         <figure>
-          <img src={src} alt={caption} />
+          <Image src={src} alt={caption} width={400} height={300}/>
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       );
@@ -132,15 +132,7 @@ const renderBlock = (block: any) => {
     case "quote":
       return <blockquote key={id}>{value.rich_text[0].plain_text}</blockquote>;
     case "code":
-      const highlightCodeAsync = async () => {
-        const highlightedCode = await highlightCode(value.rich_text[0].plain_text);
-        return highlightedCode;
-      };
       return (
-        // <div>
-        //   <h1>Code Highlight Page</h1>
-        //   <pre dangerouslySetInnerHTML={{__html: highlightCodeAsync()}} />
-        // </div>
         <pre className={styles.pre}>
           <code className={styles.code_block} key={id}>
             {value.rich_text[0].plain_text}

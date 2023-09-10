@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "@/styles/home/header.module.css";
 import SearchBar from './SearchBar';
+import Image from "next/image";
 
 export default function Header() {
   const menuItems = [
@@ -14,7 +15,7 @@ export default function Header() {
       <nav className={styles.nav}>
         <div>
           <Link href={'./'}>
-            <img className={styles.logo} src="/darong.jpg" />
+            <Image className={styles.logo} src="/darong.jpg" width={40} height={40} alt={'로고'}/>
           </Link>
         </div>
         <div >
