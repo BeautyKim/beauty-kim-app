@@ -15,7 +15,14 @@
 }
 .newText {
     padding: 0.5rem 1rem;
-    
+}
+.coverImage {
+    overflow: hidden;
+    width: 22rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .category {
     margin: 0 auto;

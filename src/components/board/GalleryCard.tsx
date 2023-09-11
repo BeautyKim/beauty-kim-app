@@ -16,13 +16,12 @@ export default function GalleryCard({data}: any) {
     return(
         <Link href={link}>
             <div className={styles.container}>
-                <div>
+                <div className={styles.coverImage}>
                     <Image
-                        className="rounded-t-xl"
                         src={imgSrc}
                         alt="cover image"
-                        width={350}
-                        height={260}
+                        width={400}
+                        height={250}
                     />
                 </div>
                 <div className={styles.newText}>

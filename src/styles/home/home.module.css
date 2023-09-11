@@ -15,5 +15,5 @@
 .galleryCards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    margin: 0 1.3rem;
 }
