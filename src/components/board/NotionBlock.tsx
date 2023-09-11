@@ -82,9 +82,7 @@ const renderBlock = (block: any) => {
     case "numbered_list_item":
       return (
         <li key={block.id} style={textColors(value.color)}>
-          <p style={textColors(value.color)}>
-            <Text text={value.rich_text} />
-          </p>
+          <Text text={value.rich_text} style={textColors(value.color)}/>
           {!!value.children && renderNestedList(block)}
         </li>
       );
@@ -93,9 +91,7 @@ const renderBlock = (block: any) => {
         <div>
           <label htmlFor={id}>
             <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
-            <p style={textColors(value.color)}>
-              <Text text={value.rich_text} />
-            </p>
+              <Text text={value.rich_text} style={textColors(value.color)}/>
           </label>
         </div>
       );
