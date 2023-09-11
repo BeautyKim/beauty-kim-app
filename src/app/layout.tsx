@@ -2,10 +2,13 @@ import Footer from '@/components/home/Footer';
 import Header from '@/components/home/Header';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Noto_Sans_KR } from 'next/font/google';
 import Head from 'next/head';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Noto_Sans_KR({
+  weight: ['400'],
+  subsets: ['latin'] 
+});
 
 export const metadata: Metadata = {
   title: 'Beauty Kim Blog',

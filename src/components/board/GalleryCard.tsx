@@ -25,9 +25,9 @@ export default function GalleryCard({data}: any) {
                     />
                 </div>
                 <div className={styles.newText}>
-                    <h1 className={styles.category}>
+                    <p className={styles.category}>
                         {category.name}
-                    </h1>
+                    </p>
                     <h1 className={styles.title}>
                         {title}
                     </h1>
