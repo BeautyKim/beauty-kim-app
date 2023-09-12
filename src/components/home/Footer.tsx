@@ -4,10 +4,14 @@ export default function Footer() {
     return(
         <footer className={styles.container}>
             <div className={styles.image}>
-                <Link href={"https://github.com/BeautyKim"} target="_blank">
+                <Link href={"https://github.com/BeautyKim"}
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <img src={"./github_black_logo.svg"} width={30}/>
                 </Link>
-                <Link href={"https://www.instagram.com/0_ahreumi/"} target="_blank">
+                <Link href={"https://www.instagram.com/0_ahreumi/"}
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <img src={"./instagram_black_logo.svg"} width={30}/>
                 </Link>
                 <Link href={"mailto:shadowbubobubo@gmail.com"}>
