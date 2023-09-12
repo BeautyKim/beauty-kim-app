@@ -95,9 +95,9 @@ const renderBlock = (block: any) => {
       );
     case "to_do":
       return (
-        <div>
+        <div id={id}>
           <label htmlFor={id}>
-            <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
+            <input type="checkbox" defaultChecked={value.checked} />{" "}
               <Text text={value.rich_text} style={textColors(value.color)}/>
           </label>
         </div>
