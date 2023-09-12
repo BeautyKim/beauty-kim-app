@@ -81,10 +81,17 @@ const renderBlock = (block: any) => {
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
-        <li key={block.id} style={textColors(value.color)}>
-          <Text text={value.rich_text} style={textColors(value.color)}/>
-          {!!value.children && renderNestedList(block)}
-        </li>
+        <div key={block.id}>
+          <li style={textColors(value.color)}>
+            <Text text={value.rich_text} style={textColors(value.color)}/>
+            {!!value.children && renderNestedList(block)}
+          </li>
+          {block.children?.map((child: any) => (
+              <div style={{padding: "0 1rem"}}>
+                <Fragment key={child.id}>{renderBlock(child)}</Fragment>
+              </div>
+            ))}
+        </div>
       );
     case "to_do":
       return (
@@ -102,7 +109,9 @@ const renderBlock = (block: any) => {
             <Text text={value.rich_text} />
           </summary>
           {block.children?.map((child: any) => (
-            <Fragment key={child.id}>{renderBlock(child)}</Fragment>
+            <div style={{padding: "0 1.5rem"}}>
+              <Fragment key={child.id}>{renderBlock(child)}</Fragment>
+            </div>
           ))}
         </details>
       );
@@ -126,7 +135,7 @@ const renderBlock = (block: any) => {
     case "divider":
       return <hr key={id} />;
     case "quote":
-      return <blockquote key={id}>{value.rich_text[0].plain_text}</blockquote>;
+      return <blockquote className={styles.blockquote} key={id}>{value.rich_text[0].plain_text}</blockquote>;
     case "code":
       return (
         <pre className={styles.pre}>
@@ -173,7 +182,7 @@ const renderBlock = (block: any) => {
                   {child.table_row?.cells?.map((cell: any, i: any) => {
                     return (
                       <RowElement key={`${cell.plain_text}-${i}`}>
-                        <p style={textColors(value.color)}>
+                        <p>
                           <Text text={cell} />
                         </p>
                       </RowElement>

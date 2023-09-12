@@ -140,6 +140,15 @@
   width: 50rem;
 }
 
+.blockquote:before {
+  content: "\201C";
+  font-size: 3em;
+  font-family: Georgia;
+  color: #bcbcbc;
+  float: left;
+  margin: -20px 5px 5px 0px;
+}
+
   
 @media (prefers-color-scheme: dark) {
   .code,
