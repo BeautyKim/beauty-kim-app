@@ -87,17 +87,17 @@ const renderBlock = (block: any) => {
             {!!value.children && renderNestedList(block)}
           </li>
           {block.children?.map((child: any) => (
-              <div style={{padding: "0 1rem"}}>
-                <Fragment key={child.id}>{renderBlock(child)}</Fragment>
+              <div style={{padding: "0 1rem"}} key={child.id}>
+                <Fragment>{renderBlock(child)}</Fragment>
               </div>
             ))}
         </div>
       );
     case "to_do":
       return (
-        <div id={id}>
+        <div>
           <label htmlFor={id}>
-            <input type="checkbox" defaultChecked={value.checked} />{" "}
+            <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
               <Text text={value.rich_text} style={textColors(value.color)}/>
           </label>
         </div>
@@ -109,8 +109,8 @@ const renderBlock = (block: any) => {
             <Text text={value.rich_text} />
           </summary>
           {block.children?.map((child: any) => (
-            <div style={{padding: "0 1.5rem"}}>
-              <Fragment key={child.id}>{renderBlock(child)}</Fragment>
+            <div style={{padding: "0 1.5rem"}} key={child.id}>
+              <Fragment>{renderBlock(child)}</Fragment>
             </div>
           ))}
         </details>
