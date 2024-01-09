@@ -6,12 +6,12 @@ import Link from "next/link";
 
 export default function NewText({data}: any) {
 
-    const link = data.id;
-    const category = data.properties.Category.select;
-    const imgSrc = data.cover.file?.url || data.cover.external.url;
-    const title = data.properties.Name.title[0].plain_text;
-    const tags = data.properties.Tag.multi_select;
-    const description = data.properties.Description.rich_text[0].plain_text;
+    let link = data.id;
+    let category = data.properties.Category.select;
+    let imgSrc = data.cover.file?.url || data.cover.external.url;
+    let title = data.properties.Name.title[0].plain_text;
+    let tags = data.properties.Tag.multi_select;
+    let description = data.properties.Description.rich_text[0].plain_text;
 
     return (
         <div className={styles.container}>

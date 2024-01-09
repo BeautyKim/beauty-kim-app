@@ -8,10 +8,10 @@ export default function GalleryCard({data}: any) {
     
     const link = data.id;
     const category = data.properties.Category.select;
-    const title = data.properties.Name.title[0].plain_text;
-    const imgSrc = data.cover.file?.url || data.cover.external.url;
+    let title = data.properties.Name.title[0].plain_text;
+    let imgSrc = data.cover.file?.url || data.cover.external.url;
     const tags = data.properties.Tag.multi_select;
-    const description = data.properties.Description.rich_text[0].plain_text;
+    let description = data.properties.Description.rich_text[0].plain_text;
 
     return(
         <Link href={link}>
