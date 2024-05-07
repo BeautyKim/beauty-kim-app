@@ -1,20 +1,14 @@
 # Next.js 13 + Notion API Blog
 
+사이트 보러가기 ->[😎Beauty Kim Blog Site](https://beautykimnotionblog-1mm8tyh6u-beautykims-projects.vercel.app/)  
+[📄개발문서](https://ahreumi.notion.site/2024-7c770cbd52f84127801f50d2459add1c?pvs=4) 작성중입니다.
 
-사이트 보러가기 ->[😎Beauty Kim Blog Site](https://beauty-kim.site/)  
-[📄개발문서](https://beauty-kim.site/0d58f07c-855d-42ff-88e0-93d006e12761) 작성중입니다.
-## Getting Started
+## 주요기술
 
-First, run the development server:
+- Next.js13, Notion API, typescript
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+# 화면
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
----
+<center>
+  <img width="700" src="./public/notion.gif">
+</center>

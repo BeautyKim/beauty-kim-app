@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
             <div className={styles.textBox}>
                 <h3 className={styles.text}>Beauty Kim blog</h3>
-                <p className={styles.text}>ⓒ 2021. Beauty Kim. All rights reserved.</p>
+                <p className={styles.text}>ⓒ 2023. Beauty Kim. All rights reserved.</p>
             </div>
         </footer>
     )
