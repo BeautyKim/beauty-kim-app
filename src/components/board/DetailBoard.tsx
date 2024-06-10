@@ -9,7 +9,7 @@ export default function DetailBoard({ page, blocks }: any) {
     if (!page || !blocks) {
         return <div />;
       }
-    const imgSrc = page.cover.file?.url;;
+    const imgSrc = page.cover.file?.url;
 
     return (
         <section className={styles.container}>

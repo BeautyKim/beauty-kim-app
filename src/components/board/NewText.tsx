@@ -8,7 +8,7 @@ export default function NewText({data}: any) {
 
     let link = data.id;
     let category = data.properties.Category.select;
-    let imgSrc = data.cover.file?.url || data.cover.external.url;
+    let imgSrc = data.cover.file?.url; //|| data.cover.external.url;
     let title = data.properties.Name.title[0].plain_text;
     let tags = data.properties.Tag.multi_select;
     let description = data.properties.Description.rich_text[0].plain_text;
